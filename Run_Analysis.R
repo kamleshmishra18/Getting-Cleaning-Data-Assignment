@@ -3,8 +3,16 @@
 
 library(dplyr)
 
+## Download the file
+                if(!file.exists("./data")){dir.create("./data")}
+                fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+                download.file(fileUrl,destfile="./data/Dataset.zip")
+
+## Unzip dataSet to /data directory
+                unzip(zipfile="./data/Dataset.zip",exdir="./data")
+
 ## Setting The file path so that no need to type the full path in each read.
-path = file.path("./data", "UCI HAR Dataset")
+                path = file.path("./data", "UCI HAR Dataset")
 
 ## 1. Output Steps - Create the data set of training and test
 
